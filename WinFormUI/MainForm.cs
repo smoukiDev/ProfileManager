@@ -57,23 +57,21 @@ namespace WinFormUI
         {
             try
             {
-                string targetOwner = dgvProfiles.SelectedRows[0].Cells[0].Value.ToString();
-                string targetTable = dgvProfiles.SelectedRows[0].Cells[1].Value.ToString();
-                string targetContraint = dgvProfiles.SelectedRows[0].Cells[2].Value.ToString();
-                DialogResult SaveOrNot = MessageBox.Show("Are you sure, you want to drop this constraint?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                string targetUser = dgvProfiles.SelectedRows[0].Cells[1].Value.ToString();
+                DialogResult SaveOrNot = MessageBox.Show("Are you sure, you want to drop this user?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (SaveOrNot == DialogResult.Yes)
                 {
-                    DropConstraint(targetOwner, targetTable, targetContraint);
+                    DropConstraint(targetUser);
                 }
                 if (SaveOrNot == DialogResult.No)
                 {
-                    string lucidMessage = "Dropping of constraint was discarded.";
+                    string lucidMessage = "Dropping of user was discarded.";
                     MessageBox.Show(lucidMessage, "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch(ArgumentOutOfRangeException)
             {
-                string lucidMessage = "Please choose whole line in table to drop an constraint";
+                string lucidMessage = "Please choose whole line in table to drop an user";
                 MessageBox.Show(lucidMessage, "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
                 
@@ -155,18 +153,18 @@ namespace WinFormUI
             SelectConstraints(connectionString, sql);
 
         }
-        private void DropConstraint(string owner, string table, string constraintName)
+        private void DropConstraint(string user)
         {            
             try
             {
-                string sqlExpression = $"ALTER TABLE {owner}.{table} DROP CONSTRAINT {constraintName}";
+                string sqlExpression = $"DROP USER {user} CASCADE";
                 using (OracleConnection connection = new OracleConnection(connectionString))
                 {
                     connection.Open();
                     using (OracleCommand command = new OracleCommand(sqlExpression, connection))
                     {
                             command.ExecuteNonQuery();
-                            string lucidMessage = "Constraint was successfully dropped.";
+                            string lucidMessage = "User was successfully dropped.";
                             MessageBox.Show(lucidMessage, "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);                           
                     }
 
@@ -176,7 +174,7 @@ namespace WinFormUI
             }
             catch(Exception ex)
             {
-                string lucidMessage = "Dropping of constraint was aborted." + Environment.NewLine + Environment.NewLine;
+                string lucidMessage = "Dropping of user was aborted." + Environment.NewLine + Environment.NewLine;
                 MessageBox.Show(lucidMessage + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
