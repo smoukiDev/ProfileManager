@@ -44,13 +44,13 @@ namespace WinFormUI
             tbSearch.Text = tbSearch.Text.ToUpper().Replace(' ', '_');
             if(rbByName.Checked ==true)
             {
-                GetConstraintsByOwner(tbSearch.Text);
+                GetConstraintsUserName(tbSearch.Text);
             }
 
 
             if (rbByID.Checked == true)
             {
-                GetConstraintsByTable(tbSearch.Text);
+                GetConstraintsUserID(tbSearch.Text);
             }
         }
         private void butDropConstraint_Click(object sender, EventArgs e)
@@ -137,17 +137,21 @@ namespace WinFormUI
                        + "CREATED, LAST_LOGIN FROM DBA_USERS";
             SelectConstraints(connectionString, sql);
         }
-        private void GetConstraintsByOwner(string searchRequest)
+        private void GetConstraintsUserName(string searchRequest)
         {
-            string sql = $"SELECT OWNER, TABLE_NAME, CONSTRAINT_NAME, CONSTRAINT_TYPE, STATUS FROM ALL_CONSTRAINTS "
-                       + $"WHERE OWNER='{searchRequest}'";
+            string sql = $"SELECT USER_ID, USERNAME, ACCOUNT_STATUS, "
+                       + $"DEFAULT_TABLESPACE, TEMPORARY_TABLESPACE, "
+                       + $"CREATED, LAST_LOGIN FROM DBA_USERS "
+                       + $"WHERE USERNAME = '{searchRequest}'";
             SelectConstraints(connectionString, sql);
 
         }
-        private void GetConstraintsByTable(string searchRequest)
+        private void GetConstraintsUserID(string searchRequest)
         {
-            string sql = $"SELECT OWNER, TABLE_NAME, CONSTRAINT_NAME, CONSTRAINT_TYPE, STATUS FROM ALL_CONSTRAINTS "
-                       + $"WHERE TABLE_NAME='{searchRequest}'";
+            string sql = $"SELECT USER_ID, USERNAME, ACCOUNT_STATUS, "
+                       + $"DEFAULT_TABLESPACE, TEMPORARY_TABLESPACE, "
+                       + $"CREATED, LAST_LOGIN FROM DBA_USERS "
+                       + $"WHERE USER_ID = '{searchRequest}'";
             SelectConstraints(connectionString, sql);
 
         }
