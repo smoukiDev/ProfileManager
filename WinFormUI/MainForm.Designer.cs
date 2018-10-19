@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lblSearch = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
-            this.dgvContraints = new System.Windows.Forms.DataGridView();
+            this.dgvProfiles = new System.Windows.Forms.DataGridView();
             this.butDropConstraint = new System.Windows.Forms.Button();
             this.butBuildReport = new System.Windows.Forms.Button();
             this.rbByConstraint = new System.Windows.Forms.RadioButton();
@@ -44,7 +44,7 @@
             this.butRefresh = new System.Windows.Forms.Button();
             this.butSearch = new System.Windows.Forms.Button();
             this.butCleanSearch = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContraints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfiles)).BeginInit();
             this.panFilter.SuspendLayout();
             this.panDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFilter)).BeginInit();
@@ -69,18 +69,18 @@
             this.tbSearch.TabIndex = 4;
             this.tbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dgvContraints
+            // dgvProfiles
             // 
-            this.dgvContraints.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvProfiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvContraints.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvContraints.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContraints.Location = new System.Drawing.Point(13, 13);
-            this.dgvContraints.MultiSelect = false;
-            this.dgvContraints.Name = "dgvContraints";
-            this.dgvContraints.Size = new System.Drawing.Size(957, 399);
-            this.dgvContraints.TabIndex = 8;
+            this.dgvProfiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProfiles.Location = new System.Drawing.Point(13, 13);
+            this.dgvProfiles.MultiSelect = false;
+            this.dgvProfiles.Name = "dgvProfiles";
+            this.dgvProfiles.Size = new System.Drawing.Size(957, 399);
+            this.dgvProfiles.TabIndex = 8;
             // 
             // butDropConstraint
             // 
@@ -173,7 +173,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panDataGrid.BackColor = System.Drawing.Color.Gainsboro;
-            this.panDataGrid.Controls.Add(this.dgvContraints);
+            this.panDataGrid.Controls.Add(this.dgvProfiles);
             this.panDataGrid.Controls.Add(this.butDropConstraint);
             this.panDataGrid.Controls.Add(this.butBuildReport);
             this.panDataGrid.Location = new System.Drawing.Point(12, 228);
@@ -254,7 +254,7 @@
             this.Text = "Oracle Constraints Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContraints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfiles)).EndInit();
             this.panFilter.ResumeLayout(false);
             this.panFilter.PerformLayout();
             this.panDataGrid.ResumeLayout(false);
@@ -271,7 +271,7 @@
         private System.Windows.Forms.Button butCleanSearch;
         private System.Windows.Forms.Button butSearch;
         private System.Windows.Forms.Button butRefresh;
-        private System.Windows.Forms.DataGridView dgvContraints;
+        private System.Windows.Forms.DataGridView dgvProfiles;
         private System.Windows.Forms.Button butDropConstraint;
         private System.Windows.Forms.Button butBuildReport;
         private System.Windows.Forms.RadioButton rbByConstraint;

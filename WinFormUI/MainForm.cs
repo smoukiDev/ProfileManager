@@ -63,9 +63,9 @@ namespace WinFormUI
         {
             try
             {
-                string targetOwner = dgvContraints.SelectedRows[0].Cells[0].Value.ToString();
-                string targetTable = dgvContraints.SelectedRows[0].Cells[1].Value.ToString();
-                string targetContraint = dgvContraints.SelectedRows[0].Cells[2].Value.ToString();
+                string targetOwner = dgvProfiles.SelectedRows[0].Cells[0].Value.ToString();
+                string targetTable = dgvProfiles.SelectedRows[0].Cells[1].Value.ToString();
+                string targetContraint = dgvProfiles.SelectedRows[0].Cells[2].Value.ToString();
                 DialogResult SaveOrNot = MessageBox.Show("Are you sure, you want to drop this constraint?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (SaveOrNot == DialogResult.Yes)
                 {
@@ -95,21 +95,21 @@ namespace WinFormUI
 
         private void SetDataGridViewStyle()
         {
-            dgvContraints.BorderStyle = BorderStyle.None;
-            dgvContraints.AlternatingRowsDefaultCellStyle.BackColor = ColorPalette.Gray;
-            dgvContraints.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvContraints.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            dgvContraints.DefaultCellStyle.SelectionBackColor = ColorPalette.Yellow;
-            dgvContraints.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgvContraints.BackgroundColor = Color.White;
+            dgvProfiles.BorderStyle = BorderStyle.None;
+            dgvProfiles.AlternatingRowsDefaultCellStyle.BackColor = ColorPalette.Gray;
+            dgvProfiles.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvProfiles.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dgvProfiles.DefaultCellStyle.SelectionBackColor = ColorPalette.Yellow;
+            dgvProfiles.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvProfiles.BackgroundColor = Color.White;
 
-            dgvContraints.EnableHeadersVisualStyles = false;
-            dgvContraints.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvContraints.ColumnHeadersDefaultCellStyle.BackColor = ColorPalette.Red;
-            dgvContraints.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvProfiles.EnableHeadersVisualStyles = false;
+            dgvProfiles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvProfiles.ColumnHeadersDefaultCellStyle.BackColor = ColorPalette.Red;
+            dgvProfiles.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
-            dgvContraints.RowHeadersDefaultCellStyle.BackColor = ColorPalette.Red;
-            dgvContraints.RowHeadersDefaultCellStyle.SelectionBackColor = ColorPalette.Yellow;
+            dgvProfiles.RowHeadersDefaultCellStyle.BackColor = ColorPalette.Red;
+            dgvProfiles.RowHeadersDefaultCellStyle.SelectionBackColor = ColorPalette.Yellow;
 
         }
 
@@ -124,7 +124,7 @@ namespace WinFormUI
                     {
                         DataSet ds = new DataSet();
                         adapter.Fill(ds);
-                        dgvContraints.DataSource = ds.Tables[0];
+                        dgvProfiles.DataSource = ds.Tables[0];
                     }
 
                 }
@@ -139,7 +139,8 @@ namespace WinFormUI
         private void GetAllUserProfiles()
         {
             string sql = "SELECT USER_ID, USERNAME, ACCOUNT_STATUS, " 
-                       + "DEFAULT_TABLESPACE, TEMPORARY_TABLESPACE, LAST_LOGIN FROM DBA_USERS";
+                       + "DEFAULT_TABLESPACE, TEMPORARY_TABLESPACE, "
+                       + "CREATED, LAST_LOGIN FROM DBA_USERS";
             SelectConstraints(connectionString, sql);
         }
         private void GetConstraintsByOwner(string searchRequest)
