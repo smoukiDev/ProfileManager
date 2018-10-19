@@ -20,7 +20,7 @@ namespace WinFormUI
             InitializeComponent();
             connectionString = Properties.Settings.Default.OracleSysUser;
             SetDataGridViewStyle();
-            GetAllConstraints();
+            GetAllUserProfiles();
 
         }
 
@@ -37,7 +37,7 @@ namespace WinFormUI
         }
         private void butRefresh_Click(object sender, EventArgs e)
         {
-            GetAllConstraints();
+            GetAllUserProfiles();
         }
         private void butSearch_Click(object sender, EventArgs e)
         {
@@ -136,9 +136,10 @@ namespace WinFormUI
             }
                 
         }
-        private void GetAllConstraints()
+        private void GetAllUserProfiles()
         {
-            string sql = "SELECT OWNER, TABLE_NAME, CONSTRAINT_NAME, CONSTRAINT_TYPE, STATUS FROM ALL_CONSTRAINTS";
+            string sql = "SELECT USER_ID, USERNAME, ACCOUNT_STATUS, " 
+                       + "DEFAULT_TABLESPACE, TEMPORARY_TABLESPACE, LAST_LOGIN FROM DBA_USERS";
             SelectConstraints(connectionString, sql);
         }
         private void GetConstraintsByOwner(string searchRequest)
