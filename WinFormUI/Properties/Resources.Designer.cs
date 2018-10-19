@@ -61,21 +61,11 @@ namespace WinFormUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon AppIcon {
-            get {
-                object obj = ResourceManager.GetObject("AppIcon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CleanField {
+        internal static System.Drawing.Bitmap butClear {
             get {
-                object obj = ResourceManager.GetObject("CleanField", resourceCulture);
+                object obj = ResourceManager.GetObject("butClear", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +73,9 @@ namespace WinFormUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Filter {
+        internal static System.Drawing.Bitmap butRefresh {
             get {
-                object obj = ResourceManager.GetObject("Filter", resourceCulture);
+                object obj = ResourceManager.GetObject("butRefresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,29 +83,9 @@ namespace WinFormUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PasswordVisible {
+        internal static System.Drawing.Bitmap butSearchUser {
             get {
-                object obj = ResourceManager.GetObject("PasswordVisible", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Refresh {
-            get {
-                object obj = ResourceManager.GetObject("Refresh", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Search {
-            get {
-                object obj = ResourceManager.GetObject("Search", resourceCulture);
+                object obj = ResourceManager.GetObject("butSearchUser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -42,21 +42,15 @@ namespace WinFormUI
         private void butSearch_Click(object sender, EventArgs e)
         {
             tbSearch.Text = tbSearch.Text.ToUpper().Replace(' ', '_');
-            if(rbByOwner.Checked ==true)
+            if(rbByName.Checked ==true)
             {
                 GetConstraintsByOwner(tbSearch.Text);
             }
 
 
-            if (rbByTable.Checked == true)
+            if (rbByID.Checked == true)
             {
                 GetConstraintsByTable(tbSearch.Text);
-            }
-
-
-            if (rbByConstraint.Checked == true)
-            {
-                GetConstraintsByName(tbSearch.Text);
             }
         }
         private void butDropConstraint_Click(object sender, EventArgs e)
@@ -96,20 +90,20 @@ namespace WinFormUI
         private void SetDataGridViewStyle()
         {
             dgvProfiles.BorderStyle = BorderStyle.None;
-            dgvProfiles.AlternatingRowsDefaultCellStyle.BackColor = ColorPalette.Gray;
+            dgvProfiles.AlternatingRowsDefaultCellStyle.BackColor = ColorPalette.LightGray;
             dgvProfiles.RowsDefaultCellStyle.BackColor = Color.White;
             dgvProfiles.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            dgvProfiles.DefaultCellStyle.SelectionBackColor = ColorPalette.Yellow;
+            dgvProfiles.DefaultCellStyle.SelectionBackColor = ColorPalette.Green;
             dgvProfiles.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvProfiles.BackgroundColor = Color.White;
 
             dgvProfiles.EnableHeadersVisualStyles = false;
             dgvProfiles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgvProfiles.ColumnHeadersDefaultCellStyle.BackColor = ColorPalette.Red;
+            dgvProfiles.ColumnHeadersDefaultCellStyle.BackColor = ColorPalette.Blue;
             dgvProfiles.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
-            dgvProfiles.RowHeadersDefaultCellStyle.BackColor = ColorPalette.Red;
-            dgvProfiles.RowHeadersDefaultCellStyle.SelectionBackColor = ColorPalette.Yellow;
+            dgvProfiles.RowHeadersDefaultCellStyle.BackColor = ColorPalette.Blue;
+            dgvProfiles.RowHeadersDefaultCellStyle.SelectionBackColor = ColorPalette.Green;
 
         }
 
@@ -156,12 +150,6 @@ namespace WinFormUI
                        + $"WHERE TABLE_NAME='{searchRequest}'";
             SelectConstraints(connectionString, sql);
 
-        }
-        private void GetConstraintsByName(string searchRequest)
-        {
-            string sql = $"SELECT OWNER, TABLE_NAME, CONSTRAINT_NAME, CONSTRAINT_TYPE, STATUS FROM ALL_CONSTRAINTS "
-                       + $"WHERE CONSTRAINT_NAME='{searchRequest}'";
-            SelectConstraints(connectionString, sql);
         }
         private void DropConstraint(string owner, string table, string constraintName)
         {            
