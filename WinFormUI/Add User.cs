@@ -23,6 +23,24 @@ namespace WinFormUI
 
         private void butAddUser_Click(object sender, EventArgs e)
         {
+            if (tbPassword.Text == string.Empty)
+            {
+                string lucidMessage = "Fill out the filds.";
+                MessageBox.Show(lucidMessage, "Notify", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (tbPasswordConfirm.Text == string.Empty)
+            {
+                string lucidMessage = "Fill out the filds.";
+                MessageBox.Show(lucidMessage, "Notify", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (tbUserName.Text == string.Empty)
+            {
+                string lucidMessage = "Fill out the filds.";
+                MessageBox.Show(lucidMessage, "Notify", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (tbPassword.Text == tbPasswordConfirm.Text)
             {
                 CreateUser(tbUserName.Text, tbPassword.Text);

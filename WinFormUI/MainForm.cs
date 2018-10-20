@@ -44,13 +44,13 @@ namespace WinFormUI
             tbSearch.Text = tbSearch.Text.ToUpper().Replace(' ', '_');
             if(rbByName.Checked ==true)
             {
-                GetConstraintsUserName(tbSearch.Text);
+                GetUserByName(tbSearch.Text);
             }
 
 
             if (rbByID.Checked == true)
             {
-                GetConstraintsUserID(tbSearch.Text);
+                GetUserByID(tbSearch.Text);
             }
         }
         private void butDropConstraint_Click(object sender, EventArgs e)
@@ -61,7 +61,10 @@ namespace WinFormUI
                 DialogResult SaveOrNot = MessageBox.Show("Are you sure, you want to drop this user?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (SaveOrNot == DialogResult.Yes)
                 {
-                    DropConstraint(targetUser);
+                    DropUser(targetUser);
+                    // TODO: Remake on offline
+                    GetAllUserProfiles();
+                    
                 }
                 if (SaveOrNot == DialogResult.No)
                 {
@@ -105,7 +108,7 @@ namespace WinFormUI
 
         }
 
-        private void SelectConstraints(string connectionString, string sql)
+        private void SelectUsers(string connectionString, string sql)
         {
             try
             {
@@ -133,27 +136,27 @@ namespace WinFormUI
             string sql = "SELECT USER_ID, USERNAME, ACCOUNT_STATUS, " 
                        + "DEFAULT_TABLESPACE, TEMPORARY_TABLESPACE, "
                        + "CREATED, LAST_LOGIN FROM DBA_USERS";
-            SelectConstraints(connectionString, sql);
+            SelectUsers(connectionString, sql);
         }
-        private void GetConstraintsUserName(string searchRequest)
+        private void GetUserByName(string searchRequest)
         {
             string sql = $"SELECT USER_ID, USERNAME, ACCOUNT_STATUS, "
                        + $"DEFAULT_TABLESPACE, TEMPORARY_TABLESPACE, "
                        + $"CREATED, LAST_LOGIN FROM DBA_USERS "
                        + $"WHERE USERNAME = '{searchRequest}'";
-            SelectConstraints(connectionString, sql);
+            SelectUsers(connectionString, sql);
 
         }
-        private void GetConstraintsUserID(string searchRequest)
+        private void GetUserByID(string searchRequest)
         {
             string sql = $"SELECT USER_ID, USERNAME, ACCOUNT_STATUS, "
                        + $"DEFAULT_TABLESPACE, TEMPORARY_TABLESPACE, "
                        + $"CREATED, LAST_LOGIN FROM DBA_USERS "
                        + $"WHERE USER_ID = '{searchRequest}'";
-            SelectConstraints(connectionString, sql);
+            SelectUsers(connectionString, sql);
 
         }
-        private void DropConstraint(string user)
+        private void DropUser(string user)
         {            
             try
             {

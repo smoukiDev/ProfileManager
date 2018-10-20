@@ -411,7 +411,7 @@
         <DataSetName>dsUserInfo</DataSetName>
         <Top>0.84349cm</Top>
         <Height>1.2cm</Height>
-        <Width>16.86562cm</Width>
+        <Width>16.86565cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -427,7 +427,7 @@
       <BackgroundColor>#505459</BackgroundColor>
     </Style>
   </Body>
-  <Width>6.66976in</Width>
+  <Width>6.64002in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
