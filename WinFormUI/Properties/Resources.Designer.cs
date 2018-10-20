@@ -73,6 +73,16 @@ namespace WinFormUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap butMakePasswordVisible {
+            get {
+                object obj = ResourceManager.GetObject("butMakePasswordVisible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap butRefresh {
             get {
                 object obj = ResourceManager.GetObject("butRefresh", resourceCulture);

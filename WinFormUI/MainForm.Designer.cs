@@ -39,8 +39,8 @@
             this.butAddUser = new System.Windows.Forms.Button();
             this.dgvProfiles = new System.Windows.Forms.DataGridView();
             this.butRefresh = new System.Windows.Forms.Button();
-            this.butCleanSearch = new System.Windows.Forms.Button();
             this.butSearch = new System.Windows.Forms.Button();
+            this.butCleanSearch = new System.Windows.Forms.Button();
             this.panDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfiles)).BeginInit();
             this.SuspendLayout();
@@ -150,6 +150,7 @@
             this.butAddUser.TabIndex = 11;
             this.butAddUser.Text = "Create";
             this.butAddUser.UseVisualStyleBackColor = false;
+            this.butAddUser.Click += new System.EventHandler(this.butAddUser_Click);
             // 
             // dgvProfiles
             // 
@@ -178,20 +179,6 @@
             this.butRefresh.UseVisualStyleBackColor = true;
             this.butRefresh.Click += new System.EventHandler(this.butRefresh_Click);
             // 
-            // butCleanSearch
-            // 
-            this.butCleanSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butCleanSearch.BackgroundImage = global::WinFormUI.Properties.Resources.butClear;
-            this.butCleanSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.butCleanSearch.FlatAppearance.BorderSize = 0;
-            this.butCleanSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butCleanSearch.Location = new System.Drawing.Point(937, 22);
-            this.butCleanSearch.Name = "butCleanSearch";
-            this.butCleanSearch.Size = new System.Drawing.Size(45, 45);
-            this.butCleanSearch.TabIndex = 5;
-            this.butCleanSearch.UseVisualStyleBackColor = true;
-            this.butCleanSearch.Click += new System.EventHandler(this.butCleanSearch_Click);
-            // 
             // butSearch
             // 
             this.butSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -205,6 +192,20 @@
             this.butSearch.TabIndex = 6;
             this.butSearch.UseVisualStyleBackColor = true;
             this.butSearch.Click += new System.EventHandler(this.butSearch_Click);
+            // 
+            // butCleanSearch
+            // 
+            this.butCleanSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butCleanSearch.BackgroundImage = global::WinFormUI.Properties.Resources.butClear;
+            this.butCleanSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.butCleanSearch.FlatAppearance.BorderSize = 0;
+            this.butCleanSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butCleanSearch.Location = new System.Drawing.Point(937, 22);
+            this.butCleanSearch.Name = "butCleanSearch";
+            this.butCleanSearch.Size = new System.Drawing.Size(45, 45);
+            this.butCleanSearch.TabIndex = 5;
+            this.butCleanSearch.UseVisualStyleBackColor = true;
+            this.butCleanSearch.Click += new System.EventHandler(this.butCleanSearch_Click);
             // 
             // MainForm
             // 

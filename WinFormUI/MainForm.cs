@@ -179,5 +179,12 @@ namespace WinFormUI
             }
             
         }
+
+        private void butAddUser_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Program.createUserForm = new CreateUserForm();
+            Program.createUserForm.Show();
+        }
     }
 }

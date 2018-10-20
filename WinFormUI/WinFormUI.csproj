@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add User.Designer.cs">
+      <DependentUpon>Add User.cs</DependentUpon>
+    </Compile>
     <Compile Include="ColorPalette.cs" />
     <Compile Include="dsOracleSysUser.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -96,6 +102,9 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Add User.resx">
+      <DependentUpon>Add User.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\AllConstraints.rdlc" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -139,6 +148,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\butClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\butMakePasswordVisible.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

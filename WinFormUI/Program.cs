@@ -7,10 +7,9 @@ namespace WinFormUI
 {
     static class Program
     {
-        // ConnectForm disabled
-        // static internal ConnectForm connectForm = null;
         static internal MainForm mainForm = null;
         static internal ReportForm reportForm = null;
+        static internal CreateUserForm createUserForm = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
