@@ -18,10 +18,10 @@ namespace WinFormUI
 
         private void ReportForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsOracleSysUser.ALL_CONSTRAINTS' table. You can move, or remove it, as needed.
-            this.ALL_CONSTRAINTSTableAdapter.Fill(this.dsOracleSysUser.ALL_CONSTRAINTS);
+            // TODO: This line of code loads data into the 'dsOracleSysUser.DBA_USERS' table. You can move, or remove it, as needed.
+            this.DBA_USERSTableAdapter.Fill(this.dsOracleSysUser.DBA_USERS);
 
-            this.rvConstraints.RefreshReport();
+            this.reportViwer.RefreshReport();
         }
 
         private void ReportForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -31,69 +31,70 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportForm));
-            this.ALL_CONSTRAINTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViwer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dsOracleSysUser = new WinFormUI.dsOracleSysUser();
-            this.rvConstraints = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ALL_CONSTRAINTSTableAdapter = new WinFormUI.dsOracleSysUserTableAdapters.ALL_CONSTRAINTSTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ALL_CONSTRAINTSBindingSource)).BeginInit();
+            this.DBA_USERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DBA_USERSTableAdapter = new WinFormUI.dsOracleSysUserTableAdapters.DBA_USERSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dsOracleSysUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DBA_USERSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // ALL_CONSTRAINTSBindingSource
+            // reportViwer
             // 
-            this.ALL_CONSTRAINTSBindingSource.DataMember = "ALL_CONSTRAINTS";
-            this.ALL_CONSTRAINTSBindingSource.DataSource = this.dsOracleSysUser;
+            this.reportViwer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource1.Name = "dsUserInfo";
+            reportDataSource1.Value = this.DBA_USERSBindingSource;
+            this.reportViwer.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViwer.LocalReport.ReportEmbeddedResource = "WinFormUI.Reports.UsersInfoReport.rdlc";
+            this.reportViwer.Location = new System.Drawing.Point(12, 12);
+            this.reportViwer.Name = "reportViwer";
+            this.reportViwer.Size = new System.Drawing.Size(984, 705);
+            this.reportViwer.TabIndex = 0;
+            this.reportViwer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // dsOracleSysUser
             // 
             this.dsOracleSysUser.DataSetName = "dsOracleSysUser";
             this.dsOracleSysUser.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // rvConstraints
+            // DBA_USERSBindingSource
             // 
-            this.rvConstraints.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsAllConstraints";
-            reportDataSource1.Value = this.ALL_CONSTRAINTSBindingSource;
-            this.rvConstraints.LocalReport.DataSources.Add(reportDataSource1);
-            this.rvConstraints.LocalReport.ReportEmbeddedResource = "WinFormUI.Reports.AllConstraints.rdlc";
-            this.rvConstraints.Location = new System.Drawing.Point(0, 0);
-            this.rvConstraints.Name = "rvConstraints";
-            this.rvConstraints.ServerReport.BearerToken = null;
-            this.rvConstraints.Size = new System.Drawing.Size(1008, 729);
-            this.rvConstraints.TabIndex = 0;
-            this.rvConstraints.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
-            this.rvConstraints.ZoomPercent = 50;
+            this.DBA_USERSBindingSource.DataMember = "DBA_USERS";
+            this.DBA_USERSBindingSource.DataSource = this.dsOracleSysUser;
             // 
-            // ALL_CONSTRAINTSTableAdapter
+            // DBA_USERSTableAdapter
             // 
-            this.ALL_CONSTRAINTSTableAdapter.ClearBeforeFill = true;
+            this.DBA_USERSTableAdapter.ClearBeforeFill = true;
             // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(65)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.rvConstraints);
+            this.Controls.Add(this.reportViwer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "ReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportForm_FormClosing);
             this.Load += new System.EventHandler(this.ReportForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ALL_CONSTRAINTSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsOracleSysUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DBA_USERSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvConstraints;
-        private System.Windows.Forms.BindingSource ALL_CONSTRAINTSBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViwer;
+        private System.Windows.Forms.BindingSource DBA_USERSBindingSource;
         private dsOracleSysUser dsOracleSysUser;
-        private dsOracleSysUserTableAdapters.ALL_CONSTRAINTSTableAdapter ALL_CONSTRAINTSTableAdapter;
+        private dsOracleSysUserTableAdapters.DBA_USERSTableAdapter DBA_USERSTableAdapter;
     }
 }

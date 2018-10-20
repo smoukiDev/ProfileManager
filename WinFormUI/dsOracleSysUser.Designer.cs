@@ -24,7 +24,7 @@ namespace WinFormUI {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class dsOracleSysUser : global::System.Data.DataSet {
         
-        private ALL_CONSTRAINTSDataTable tableALL_CONSTRAINTS;
+        private DBA_USERSDataTable tableDBA_USERS;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace WinFormUI {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["ALL_CONSTRAINTS"] != null)) {
-                    base.Tables.Add(new ALL_CONSTRAINTSDataTable(ds.Tables["ALL_CONSTRAINTS"]));
+                if ((ds.Tables["DBA_USERS"] != null)) {
+                    base.Tables.Add(new DBA_USERSDataTable(ds.Tables["DBA_USERS"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace WinFormUI {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ALL_CONSTRAINTSDataTable ALL_CONSTRAINTS {
+        public DBA_USERSDataTable DBA_USERS {
             get {
-                return this.tableALL_CONSTRAINTS;
+                return this.tableDBA_USERS;
             }
         }
         
@@ -152,8 +152,8 @@ namespace WinFormUI {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["ALL_CONSTRAINTS"] != null)) {
-                    base.Tables.Add(new ALL_CONSTRAINTSDataTable(ds.Tables["ALL_CONSTRAINTS"]));
+                if ((ds.Tables["DBA_USERS"] != null)) {
+                    base.Tables.Add(new DBA_USERSDataTable(ds.Tables["DBA_USERS"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace WinFormUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableALL_CONSTRAINTS = ((ALL_CONSTRAINTSDataTable)(base.Tables["ALL_CONSTRAINTS"]));
+            this.tableDBA_USERS = ((DBA_USERSDataTable)(base.Tables["DBA_USERS"]));
             if ((initTable == true)) {
-                if ((this.tableALL_CONSTRAINTS != null)) {
-                    this.tableALL_CONSTRAINTS.InitVars();
+                if ((this.tableDBA_USERS != null)) {
+                    this.tableDBA_USERS.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace WinFormUI {
             this.Namespace = "http://tempuri.org/dsOracleSysUser.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableALL_CONSTRAINTS = new ALL_CONSTRAINTSDataTable();
-            base.Tables.Add(this.tableALL_CONSTRAINTS);
+            this.tableDBA_USERS = new DBA_USERSDataTable();
+            base.Tables.Add(this.tableDBA_USERS);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeALL_CONSTRAINTS() {
+        private bool ShouldSerializeDBA_USERS() {
             return false;
         }
         
@@ -270,29 +270,33 @@ namespace WinFormUI {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ALL_CONSTRAINTSRowChangeEventHandler(object sender, ALL_CONSTRAINTSRowChangeEvent e);
+        public delegate void DBA_USERSRowChangeEventHandler(object sender, DBA_USERSRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ALL_CONSTRAINTSDataTable : global::System.Data.TypedTableBase<ALL_CONSTRAINTSRow> {
+        public partial class DBA_USERSDataTable : global::System.Data.TypedTableBase<DBA_USERSRow> {
             
-            private global::System.Data.DataColumn columnOWNER;
+            private global::System.Data.DataColumn columnUSERNAME;
             
-            private global::System.Data.DataColumn columnCONSTRAINT_NAME;
+            private global::System.Data.DataColumn columnUSER_ID;
             
-            private global::System.Data.DataColumn columnCONSTRAINT_TYPE;
+            private global::System.Data.DataColumn columnACCOUNT_STATUS;
             
-            private global::System.Data.DataColumn columnTABLE_NAME;
+            private global::System.Data.DataColumn columnDEFAULT_TABLESPACE;
             
-            private global::System.Data.DataColumn columnSTATUS;
+            private global::System.Data.DataColumn columnTEMPORARY_TABLESPACE;
+            
+            private global::System.Data.DataColumn columnCREATED;
+            
+            private global::System.Data.DataColumn columnLAST_LOGIN;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ALL_CONSTRAINTSDataTable() {
-                this.TableName = "ALL_CONSTRAINTS";
+            public DBA_USERSDataTable() {
+                this.TableName = "DBA_USERS";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +304,7 @@ namespace WinFormUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ALL_CONSTRAINTSDataTable(global::System.Data.DataTable table) {
+            internal DBA_USERSDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,48 +321,64 @@ namespace WinFormUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected ALL_CONSTRAINTSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DBA_USERSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OWNERColumn {
+            public global::System.Data.DataColumn USERNAMEColumn {
                 get {
-                    return this.columnOWNER;
+                    return this.columnUSERNAME;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CONSTRAINT_NAMEColumn {
+            public global::System.Data.DataColumn USER_IDColumn {
                 get {
-                    return this.columnCONSTRAINT_NAME;
+                    return this.columnUSER_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CONSTRAINT_TYPEColumn {
+            public global::System.Data.DataColumn ACCOUNT_STATUSColumn {
                 get {
-                    return this.columnCONSTRAINT_TYPE;
+                    return this.columnACCOUNT_STATUS;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TABLE_NAMEColumn {
+            public global::System.Data.DataColumn DEFAULT_TABLESPACEColumn {
                 get {
-                    return this.columnTABLE_NAME;
+                    return this.columnDEFAULT_TABLESPACE;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn STATUSColumn {
+            public global::System.Data.DataColumn TEMPORARY_TABLESPACEColumn {
                 get {
-                    return this.columnSTATUS;
+                    return this.columnTEMPORARY_TABLESPACE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CREATEDColumn {
+                get {
+                    return this.columnCREATED;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LAST_LOGINColumn {
+                get {
+                    return this.columnLAST_LOGIN;
                 }
             }
             
@@ -373,49 +393,51 @@ namespace WinFormUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ALL_CONSTRAINTSRow this[int index] {
+            public DBA_USERSRow this[int index] {
                 get {
-                    return ((ALL_CONSTRAINTSRow)(this.Rows[index]));
+                    return ((DBA_USERSRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ALL_CONSTRAINTSRowChangeEventHandler ALL_CONSTRAINTSRowChanging;
+            public event DBA_USERSRowChangeEventHandler DBA_USERSRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ALL_CONSTRAINTSRowChangeEventHandler ALL_CONSTRAINTSRowChanged;
+            public event DBA_USERSRowChangeEventHandler DBA_USERSRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ALL_CONSTRAINTSRowChangeEventHandler ALL_CONSTRAINTSRowDeleting;
+            public event DBA_USERSRowChangeEventHandler DBA_USERSRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ALL_CONSTRAINTSRowChangeEventHandler ALL_CONSTRAINTSRowDeleted;
+            public event DBA_USERSRowChangeEventHandler DBA_USERSRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddALL_CONSTRAINTSRow(ALL_CONSTRAINTSRow row) {
+            public void AddDBA_USERSRow(DBA_USERSRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ALL_CONSTRAINTSRow AddALL_CONSTRAINTSRow(string OWNER, string CONSTRAINT_NAME, string CONSTRAINT_TYPE, string TABLE_NAME, string STATUS) {
-                ALL_CONSTRAINTSRow rowALL_CONSTRAINTSRow = ((ALL_CONSTRAINTSRow)(this.NewRow()));
+            public DBA_USERSRow AddDBA_USERSRow(string USERNAME, decimal USER_ID, string ACCOUNT_STATUS, string DEFAULT_TABLESPACE, string TEMPORARY_TABLESPACE, System.DateTime CREATED, System.DateTime LAST_LOGIN) {
+                DBA_USERSRow rowDBA_USERSRow = ((DBA_USERSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        OWNER,
-                        CONSTRAINT_NAME,
-                        CONSTRAINT_TYPE,
-                        TABLE_NAME,
-                        STATUS};
-                rowALL_CONSTRAINTSRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowALL_CONSTRAINTSRow);
-                return rowALL_CONSTRAINTSRow;
+                        USERNAME,
+                        USER_ID,
+                        ACCOUNT_STATUS,
+                        DEFAULT_TABLESPACE,
+                        TEMPORARY_TABLESPACE,
+                        CREATED,
+                        LAST_LOGIN};
+                rowDBA_USERSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDBA_USERSRow);
+                return rowDBA_USERSRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ALL_CONSTRAINTSDataTable cln = ((ALL_CONSTRAINTSDataTable)(base.Clone()));
+                DBA_USERSDataTable cln = ((DBA_USERSDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -423,65 +445,74 @@ namespace WinFormUI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ALL_CONSTRAINTSDataTable();
+                return new DBA_USERSDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnOWNER = base.Columns["OWNER"];
-                this.columnCONSTRAINT_NAME = base.Columns["CONSTRAINT_NAME"];
-                this.columnCONSTRAINT_TYPE = base.Columns["CONSTRAINT_TYPE"];
-                this.columnTABLE_NAME = base.Columns["TABLE_NAME"];
-                this.columnSTATUS = base.Columns["STATUS"];
+                this.columnUSERNAME = base.Columns["USERNAME"];
+                this.columnUSER_ID = base.Columns["USER_ID"];
+                this.columnACCOUNT_STATUS = base.Columns["ACCOUNT_STATUS"];
+                this.columnDEFAULT_TABLESPACE = base.Columns["DEFAULT_TABLESPACE"];
+                this.columnTEMPORARY_TABLESPACE = base.Columns["TEMPORARY_TABLESPACE"];
+                this.columnCREATED = base.Columns["CREATED"];
+                this.columnLAST_LOGIN = base.Columns["LAST_LOGIN"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnOWNER = new global::System.Data.DataColumn("OWNER", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOWNER);
-                this.columnCONSTRAINT_NAME = new global::System.Data.DataColumn("CONSTRAINT_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCONSTRAINT_NAME);
-                this.columnCONSTRAINT_TYPE = new global::System.Data.DataColumn("CONSTRAINT_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCONSTRAINT_TYPE);
-                this.columnTABLE_NAME = new global::System.Data.DataColumn("TABLE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTABLE_NAME);
-                this.columnSTATUS = new global::System.Data.DataColumn("STATUS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTATUS);
-                this.columnOWNER.MaxLength = 128;
-                this.columnCONSTRAINT_NAME.AllowDBNull = false;
-                this.columnCONSTRAINT_NAME.MaxLength = 128;
-                this.columnCONSTRAINT_TYPE.MaxLength = 1;
-                this.columnTABLE_NAME.AllowDBNull = false;
-                this.columnTABLE_NAME.MaxLength = 128;
-                this.columnSTATUS.MaxLength = 8;
+                this.columnUSERNAME = new global::System.Data.DataColumn("USERNAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUSERNAME);
+                this.columnUSER_ID = new global::System.Data.DataColumn("USER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUSER_ID);
+                this.columnACCOUNT_STATUS = new global::System.Data.DataColumn("ACCOUNT_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnACCOUNT_STATUS);
+                this.columnDEFAULT_TABLESPACE = new global::System.Data.DataColumn("DEFAULT_TABLESPACE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDEFAULT_TABLESPACE);
+                this.columnTEMPORARY_TABLESPACE = new global::System.Data.DataColumn("TEMPORARY_TABLESPACE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTEMPORARY_TABLESPACE);
+                this.columnCREATED = new global::System.Data.DataColumn("CREATED", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCREATED);
+                this.columnLAST_LOGIN = new global::System.Data.DataColumn("LAST_LOGIN", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLAST_LOGIN);
+                this.columnUSERNAME.AllowDBNull = false;
+                this.columnUSERNAME.MaxLength = 128;
+                this.columnUSER_ID.AllowDBNull = false;
+                this.columnACCOUNT_STATUS.AllowDBNull = false;
+                this.columnACCOUNT_STATUS.MaxLength = 32;
+                this.columnDEFAULT_TABLESPACE.AllowDBNull = false;
+                this.columnDEFAULT_TABLESPACE.MaxLength = 30;
+                this.columnTEMPORARY_TABLESPACE.AllowDBNull = false;
+                this.columnTEMPORARY_TABLESPACE.MaxLength = 30;
+                this.columnCREATED.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ALL_CONSTRAINTSRow NewALL_CONSTRAINTSRow() {
-                return ((ALL_CONSTRAINTSRow)(this.NewRow()));
+            public DBA_USERSRow NewDBA_USERSRow() {
+                return ((DBA_USERSRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ALL_CONSTRAINTSRow(builder);
+                return new DBA_USERSRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ALL_CONSTRAINTSRow);
+                return typeof(DBA_USERSRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ALL_CONSTRAINTSRowChanged != null)) {
-                    this.ALL_CONSTRAINTSRowChanged(this, new ALL_CONSTRAINTSRowChangeEvent(((ALL_CONSTRAINTSRow)(e.Row)), e.Action));
+                if ((this.DBA_USERSRowChanged != null)) {
+                    this.DBA_USERSRowChanged(this, new DBA_USERSRowChangeEvent(((DBA_USERSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -489,8 +520,8 @@ namespace WinFormUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ALL_CONSTRAINTSRowChanging != null)) {
-                    this.ALL_CONSTRAINTSRowChanging(this, new ALL_CONSTRAINTSRowChangeEvent(((ALL_CONSTRAINTSRow)(e.Row)), e.Action));
+                if ((this.DBA_USERSRowChanging != null)) {
+                    this.DBA_USERSRowChanging(this, new DBA_USERSRowChangeEvent(((DBA_USERSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -498,8 +529,8 @@ namespace WinFormUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ALL_CONSTRAINTSRowDeleted != null)) {
-                    this.ALL_CONSTRAINTSRowDeleted(this, new ALL_CONSTRAINTSRowChangeEvent(((ALL_CONSTRAINTSRow)(e.Row)), e.Action));
+                if ((this.DBA_USERSRowDeleted != null)) {
+                    this.DBA_USERSRowDeleted(this, new DBA_USERSRowChangeEvent(((DBA_USERSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -507,14 +538,14 @@ namespace WinFormUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ALL_CONSTRAINTSRowDeleting != null)) {
-                    this.ALL_CONSTRAINTSRowDeleting(this, new ALL_CONSTRAINTSRowChangeEvent(((ALL_CONSTRAINTSRow)(e.Row)), e.Action));
+                if ((this.DBA_USERSRowDeleting != null)) {
+                    this.DBA_USERSRowDeleting(this, new DBA_USERSRowChangeEvent(((DBA_USERSRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveALL_CONSTRAINTSRow(ALL_CONSTRAINTSRow row) {
+            public void RemoveDBA_USERSRow(DBA_USERSRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -541,7 +572,7 @@ namespace WinFormUI {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ALL_CONSTRAINTSDataTable";
+                attribute2.FixedValue = "DBA_USERSDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -585,121 +616,109 @@ namespace WinFormUI {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ALL_CONSTRAINTSRow : global::System.Data.DataRow {
+        public partial class DBA_USERSRow : global::System.Data.DataRow {
             
-            private ALL_CONSTRAINTSDataTable tableALL_CONSTRAINTS;
+            private DBA_USERSDataTable tableDBA_USERS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ALL_CONSTRAINTSRow(global::System.Data.DataRowBuilder rb) : 
+            internal DBA_USERSRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableALL_CONSTRAINTS = ((ALL_CONSTRAINTSDataTable)(this.Table));
+                this.tableDBA_USERS = ((DBA_USERSDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OWNER {
+            public string USERNAME {
+                get {
+                    return ((string)(this[this.tableDBA_USERS.USERNAMEColumn]));
+                }
+                set {
+                    this[this.tableDBA_USERS.USERNAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal USER_ID {
+                get {
+                    return ((decimal)(this[this.tableDBA_USERS.USER_IDColumn]));
+                }
+                set {
+                    this[this.tableDBA_USERS.USER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ACCOUNT_STATUS {
+                get {
+                    return ((string)(this[this.tableDBA_USERS.ACCOUNT_STATUSColumn]));
+                }
+                set {
+                    this[this.tableDBA_USERS.ACCOUNT_STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DEFAULT_TABLESPACE {
+                get {
+                    return ((string)(this[this.tableDBA_USERS.DEFAULT_TABLESPACEColumn]));
+                }
+                set {
+                    this[this.tableDBA_USERS.DEFAULT_TABLESPACEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TEMPORARY_TABLESPACE {
+                get {
+                    return ((string)(this[this.tableDBA_USERS.TEMPORARY_TABLESPACEColumn]));
+                }
+                set {
+                    this[this.tableDBA_USERS.TEMPORARY_TABLESPACEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime CREATED {
+                get {
+                    return ((global::System.DateTime)(this[this.tableDBA_USERS.CREATEDColumn]));
+                }
+                set {
+                    this[this.tableDBA_USERS.CREATEDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime LAST_LOGIN {
                 get {
                     try {
-                        return ((string)(this[this.tableALL_CONSTRAINTS.OWNERColumn]));
+                        return ((global::System.DateTime)(this[this.tableDBA_USERS.LAST_LOGINColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OWNER\' in table \'ALL_CONSTRAINTS\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LAST_LOGIN\' in table \'DBA_USERS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableALL_CONSTRAINTS.OWNERColumn] = value;
+                    this[this.tableDBA_USERS.LAST_LOGINColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CONSTRAINT_NAME {
-                get {
-                    return ((string)(this[this.tableALL_CONSTRAINTS.CONSTRAINT_NAMEColumn]));
-                }
-                set {
-                    this[this.tableALL_CONSTRAINTS.CONSTRAINT_NAMEColumn] = value;
-                }
+            public bool IsLAST_LOGINNull() {
+                return this.IsNull(this.tableDBA_USERS.LAST_LOGINColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CONSTRAINT_TYPE {
-                get {
-                    try {
-                        return ((string)(this[this.tableALL_CONSTRAINTS.CONSTRAINT_TYPEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CONSTRAINT_TYPE\' in table \'ALL_CONSTRAINTS\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableALL_CONSTRAINTS.CONSTRAINT_TYPEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TABLE_NAME {
-                get {
-                    return ((string)(this[this.tableALL_CONSTRAINTS.TABLE_NAMEColumn]));
-                }
-                set {
-                    this[this.tableALL_CONSTRAINTS.TABLE_NAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string STATUS {
-                get {
-                    try {
-                        return ((string)(this[this.tableALL_CONSTRAINTS.STATUSColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STATUS\' in table \'ALL_CONSTRAINTS\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableALL_CONSTRAINTS.STATUSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOWNERNull() {
-                return this.IsNull(this.tableALL_CONSTRAINTS.OWNERColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOWNERNull() {
-                this[this.tableALL_CONSTRAINTS.OWNERColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCONSTRAINT_TYPENull() {
-                return this.IsNull(this.tableALL_CONSTRAINTS.CONSTRAINT_TYPEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCONSTRAINT_TYPENull() {
-                this[this.tableALL_CONSTRAINTS.CONSTRAINT_TYPEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSTATUSNull() {
-                return this.IsNull(this.tableALL_CONSTRAINTS.STATUSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSTATUSNull() {
-                this[this.tableALL_CONSTRAINTS.STATUSColumn] = global::System.Convert.DBNull;
+            public void SetLAST_LOGINNull() {
+                this[this.tableDBA_USERS.LAST_LOGINColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -707,22 +726,22 @@ namespace WinFormUI {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ALL_CONSTRAINTSRowChangeEvent : global::System.EventArgs {
+        public class DBA_USERSRowChangeEvent : global::System.EventArgs {
             
-            private ALL_CONSTRAINTSRow eventRow;
+            private DBA_USERSRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ALL_CONSTRAINTSRowChangeEvent(ALL_CONSTRAINTSRow row, global::System.Data.DataRowAction action) {
+            public DBA_USERSRowChangeEvent(DBA_USERSRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ALL_CONSTRAINTSRow Row {
+            public DBA_USERSRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -750,7 +769,7 @@ namespace WinFormUI.dsOracleSysUserTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ALL_CONSTRAINTSTableAdapter : global::System.ComponentModel.Component {
+    public partial class DBA_USERSTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -764,7 +783,7 @@ namespace WinFormUI.dsOracleSysUserTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ALL_CONSTRAINTSTableAdapter() {
+        public DBA_USERSTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -861,12 +880,14 @@ namespace WinFormUI.dsOracleSysUserTableAdapters {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ALL_CONSTRAINTS";
-            tableMapping.ColumnMappings.Add("OWNER", "OWNER");
-            tableMapping.ColumnMappings.Add("CONSTRAINT_NAME", "CONSTRAINT_NAME");
-            tableMapping.ColumnMappings.Add("CONSTRAINT_TYPE", "CONSTRAINT_TYPE");
-            tableMapping.ColumnMappings.Add("TABLE_NAME", "TABLE_NAME");
-            tableMapping.ColumnMappings.Add("STATUS", "STATUS");
+            tableMapping.DataSetTable = "DBA_USERS";
+            tableMapping.ColumnMappings.Add("USERNAME", "USERNAME");
+            tableMapping.ColumnMappings.Add("USER_ID", "USER_ID");
+            tableMapping.ColumnMappings.Add("ACCOUNT_STATUS", "ACCOUNT_STATUS");
+            tableMapping.ColumnMappings.Add("DEFAULT_TABLESPACE", "DEFAULT_TABLESPACE");
+            tableMapping.ColumnMappings.Add("TEMPORARY_TABLESPACE", "TEMPORARY_TABLESPACE");
+            tableMapping.ColumnMappings.Add("CREATED", "CREATED");
+            tableMapping.ColumnMappings.Add("LAST_LOGIN", "LAST_LOGIN");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -883,8 +904,8 @@ namespace WinFormUI.dsOracleSysUserTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT OWNER, CONSTRAINT_NAME, CONSTRAINT_TYPE, TABLE_NAME, STATUS FROM SYS.ALL_C" +
-                "ONSTRAINTS";
+            this._commandCollection[0].CommandText = "SELECT USERNAME, USER_ID, ACCOUNT_STATUS, DEFAULT_TABLESPACE, TEMPORARY_TABLESPAC" +
+                "E, CREATED, LAST_LOGIN FROM SYS.DBA_USERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -892,7 +913,7 @@ namespace WinFormUI.dsOracleSysUserTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsOracleSysUser.ALL_CONSTRAINTSDataTable dataTable) {
+        public virtual int Fill(dsOracleSysUser.DBA_USERSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -905,9 +926,9 @@ namespace WinFormUI.dsOracleSysUserTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsOracleSysUser.ALL_CONSTRAINTSDataTable GetData() {
+        public virtual dsOracleSysUser.DBA_USERSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsOracleSysUser.ALL_CONSTRAINTSDataTable dataTable = new dsOracleSysUser.ALL_CONSTRAINTSDataTable();
+            dsOracleSysUser.DBA_USERSDataTable dataTable = new dsOracleSysUser.DBA_USERSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
