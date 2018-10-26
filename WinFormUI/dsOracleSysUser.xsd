@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="OracleSysUser (Settings)" DbObjectName="SYS.DBA_USERS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT USERNAME, USER_ID, ACCOUNT_STATUS, DEFAULT_TABLESPACE, TEMPORARY_TABLESPACE, CREATED, LAST_LOGIN FROM SYS.DBA_USERS</CommandText>
+                    <CommandText>SELECT USERNAME, USER_ID, ACCOUNT_STATUS, CREATED, LAST_LOGIN FROM SYS.DBA_USERS</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -22,8 +22,6 @@
               <Mapping SourceColumn="USERNAME" DataSetColumn="USERNAME" />
               <Mapping SourceColumn="USER_ID" DataSetColumn="USER_ID" />
               <Mapping SourceColumn="ACCOUNT_STATUS" DataSetColumn="ACCOUNT_STATUS" />
-              <Mapping SourceColumn="DEFAULT_TABLESPACE" DataSetColumn="DEFAULT_TABLESPACE" />
-              <Mapping SourceColumn="TEMPORARY_TABLESPACE" DataSetColumn="TEMPORARY_TABLESPACE" />
               <Mapping SourceColumn="CREATED" DataSetColumn="CREATED" />
               <Mapping SourceColumn="LAST_LOGIN" DataSetColumn="LAST_LOGIN" />
             </Mappings>
@@ -52,20 +50,6 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="32" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DEFAULT_TABLESPACE" msprop:Generator_ColumnVarNameInTable="columnDEFAULT_TABLESPACE" msprop:Generator_ColumnPropNameInRow="DEFAULT_TABLESPACE" msprop:Generator_ColumnPropNameInTable="DEFAULT_TABLESPACEColumn" msprop:Generator_UserColumnName="DEFAULT_TABLESPACE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TEMPORARY_TABLESPACE" msprop:Generator_ColumnVarNameInTable="columnTEMPORARY_TABLESPACE" msprop:Generator_ColumnPropNameInRow="TEMPORARY_TABLESPACE" msprop:Generator_ColumnPropNameInTable="TEMPORARY_TABLESPACEColumn" msprop:Generator_UserColumnName="TEMPORARY_TABLESPACE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

@@ -285,10 +285,6 @@ namespace WinFormUI {
             
             private global::System.Data.DataColumn columnACCOUNT_STATUS;
             
-            private global::System.Data.DataColumn columnDEFAULT_TABLESPACE;
-            
-            private global::System.Data.DataColumn columnTEMPORARY_TABLESPACE;
-            
             private global::System.Data.DataColumn columnCREATED;
             
             private global::System.Data.DataColumn columnLAST_LOGIN;
@@ -352,22 +348,6 @@ namespace WinFormUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DEFAULT_TABLESPACEColumn {
-                get {
-                    return this.columnDEFAULT_TABLESPACE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TEMPORARY_TABLESPACEColumn {
-                get {
-                    return this.columnTEMPORARY_TABLESPACE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn CREATEDColumn {
                 get {
                     return this.columnCREATED;
@@ -419,14 +399,12 @@ namespace WinFormUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DBA_USERSRow AddDBA_USERSRow(string USERNAME, decimal USER_ID, string ACCOUNT_STATUS, string DEFAULT_TABLESPACE, string TEMPORARY_TABLESPACE, System.DateTime CREATED, System.DateTime LAST_LOGIN) {
+            public DBA_USERSRow AddDBA_USERSRow(string USERNAME, decimal USER_ID, string ACCOUNT_STATUS, System.DateTime CREATED, System.DateTime LAST_LOGIN) {
                 DBA_USERSRow rowDBA_USERSRow = ((DBA_USERSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         USERNAME,
                         USER_ID,
                         ACCOUNT_STATUS,
-                        DEFAULT_TABLESPACE,
-                        TEMPORARY_TABLESPACE,
                         CREATED,
                         LAST_LOGIN};
                 rowDBA_USERSRow.ItemArray = columnValuesArray;
@@ -454,8 +432,6 @@ namespace WinFormUI {
                 this.columnUSERNAME = base.Columns["USERNAME"];
                 this.columnUSER_ID = base.Columns["USER_ID"];
                 this.columnACCOUNT_STATUS = base.Columns["ACCOUNT_STATUS"];
-                this.columnDEFAULT_TABLESPACE = base.Columns["DEFAULT_TABLESPACE"];
-                this.columnTEMPORARY_TABLESPACE = base.Columns["TEMPORARY_TABLESPACE"];
                 this.columnCREATED = base.Columns["CREATED"];
                 this.columnLAST_LOGIN = base.Columns["LAST_LOGIN"];
             }
@@ -469,10 +445,6 @@ namespace WinFormUI {
                 base.Columns.Add(this.columnUSER_ID);
                 this.columnACCOUNT_STATUS = new global::System.Data.DataColumn("ACCOUNT_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnACCOUNT_STATUS);
-                this.columnDEFAULT_TABLESPACE = new global::System.Data.DataColumn("DEFAULT_TABLESPACE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDEFAULT_TABLESPACE);
-                this.columnTEMPORARY_TABLESPACE = new global::System.Data.DataColumn("TEMPORARY_TABLESPACE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTEMPORARY_TABLESPACE);
                 this.columnCREATED = new global::System.Data.DataColumn("CREATED", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCREATED);
                 this.columnLAST_LOGIN = new global::System.Data.DataColumn("LAST_LOGIN", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -482,10 +454,6 @@ namespace WinFormUI {
                 this.columnUSER_ID.AllowDBNull = false;
                 this.columnACCOUNT_STATUS.AllowDBNull = false;
                 this.columnACCOUNT_STATUS.MaxLength = 32;
-                this.columnDEFAULT_TABLESPACE.AllowDBNull = false;
-                this.columnDEFAULT_TABLESPACE.MaxLength = 30;
-                this.columnTEMPORARY_TABLESPACE.AllowDBNull = false;
-                this.columnTEMPORARY_TABLESPACE.MaxLength = 30;
                 this.columnCREATED.AllowDBNull = false;
             }
             
@@ -657,28 +625,6 @@ namespace WinFormUI {
                 }
                 set {
                     this[this.tableDBA_USERS.ACCOUNT_STATUSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DEFAULT_TABLESPACE {
-                get {
-                    return ((string)(this[this.tableDBA_USERS.DEFAULT_TABLESPACEColumn]));
-                }
-                set {
-                    this[this.tableDBA_USERS.DEFAULT_TABLESPACEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TEMPORARY_TABLESPACE {
-                get {
-                    return ((string)(this[this.tableDBA_USERS.TEMPORARY_TABLESPACEColumn]));
-                }
-                set {
-                    this[this.tableDBA_USERS.TEMPORARY_TABLESPACEColumn] = value;
                 }
             }
             
@@ -884,8 +830,6 @@ namespace WinFormUI.dsOracleSysUserTableAdapters {
             tableMapping.ColumnMappings.Add("USERNAME", "USERNAME");
             tableMapping.ColumnMappings.Add("USER_ID", "USER_ID");
             tableMapping.ColumnMappings.Add("ACCOUNT_STATUS", "ACCOUNT_STATUS");
-            tableMapping.ColumnMappings.Add("DEFAULT_TABLESPACE", "DEFAULT_TABLESPACE");
-            tableMapping.ColumnMappings.Add("TEMPORARY_TABLESPACE", "TEMPORARY_TABLESPACE");
             tableMapping.ColumnMappings.Add("CREATED", "CREATED");
             tableMapping.ColumnMappings.Add("LAST_LOGIN", "LAST_LOGIN");
             this._adapter.TableMappings.Add(tableMapping);
@@ -904,8 +848,7 @@ namespace WinFormUI.dsOracleSysUserTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT USERNAME, USER_ID, ACCOUNT_STATUS, DEFAULT_TABLESPACE, TEMPORARY_TABLESPAC" +
-                "E, CREATED, LAST_LOGIN FROM SYS.DBA_USERS";
+            this._commandCollection[0].CommandText = "SELECT USERNAME, USER_ID, ACCOUNT_STATUS, CREATED, LAST_LOGIN FROM SYS.DBA_USERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
